@@ -161,6 +161,8 @@ class Computer {
     }
 
     public function setModello($modello) {
+        if(!is_string($modello))
+        throw new Exception("Modello non valido");
         if(strlen($modello)< 3 || strlen($modello)> 20)
         throw new Exception("Modello non valido");
         $this -> modello = $modello;
@@ -171,6 +173,8 @@ class Computer {
     }
 
     public function setMarca($marca) {
+        if(!is_string($marca))
+        throw new Exception("Modello non valido");
         if(strlen($marca)< 3 || strlen($marca)> 20)
         throw new Exception("Marca non valida");
         $this -> marca = $marca;
@@ -198,6 +202,4 @@ try {
 } catch(Exception $e) {
     echo $e -> getMessage();
 }
-
-
 ?>
